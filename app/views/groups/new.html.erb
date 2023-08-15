@@ -1,0 +1,15 @@
+<h1>Add a New Group</h1>
+
+<%= form_with model: @group, url: groups_path do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :icon %>
+    <%= form.text_field :icon %>
+  </div>
+  <%= form.submit 'Create Group' %>
+<% end %>
+
+<%= link_to 'Back to Group Page', groups_path %>
