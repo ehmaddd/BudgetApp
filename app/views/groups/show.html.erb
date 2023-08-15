@@ -1,0 +1,11 @@
+<h1>Deals for <%= @group.name %> Group</h1>
+
+<% @group.deals.each do |deal| %>
+  <div class="deal">
+    <h2><%= deal.name %></h2>
+    <p>Description: <%= deal.description %></p>
+    <p>Amount: <%= deal.amount %></p>
+  </div>
+<% end %>
+
+<%= link_to 'Back to Group Page', groups_path %>
