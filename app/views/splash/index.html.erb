@@ -9,8 +9,8 @@
     <h1>Welcome to Budget App</h1>
     <p>A simple and amazing web application</p>
     <div class="buttons">
-      <a href="/signup" class="button">Sign Up</a>
-      <a href="/login" class="button">Log In</a>
+      <%= link_to 'Sign up', new_user_registration_path, class: "button" %>
+      <%= link_to 'Log in', new_user_session_path, class: "button" %>
     </div>
   </div>
 </body>

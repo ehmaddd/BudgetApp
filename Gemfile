@@ -75,3 +75,4 @@ end
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'devise'
