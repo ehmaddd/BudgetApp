@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_15_023304) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_15_065110) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "deal_groups", force: :cascade do |t|
+    t.bigint "deal_id", null: false
+    t.bigint "group_id", null: false
+    t.index ["deal_id"], name: "index_deal_groups_on_deal_id"
+    t.index ["group_id"], name: "index_deal_groups_on_group_id"
+  end
 
   create_table "deals", force: :cascade do |t|
     t.bigint "author_id", null: false
@@ -42,6 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_023304) do
     t.string "name"
   end
 
+  add_foreign_key "deal_groups", "deals"
+  add_foreign_key "deal_groups", "groups"
   add_foreign_key "deals", "users", column: "author_id"
   add_foreign_key "deals_groups", "deals"
   add_foreign_key "deals_groups", "groups"
