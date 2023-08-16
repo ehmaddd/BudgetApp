@@ -1,11 +1,16 @@
-<h1>Deals for <%= @group.name %> Group</h1>
+<!-- app/views/groups/show.html.erb -->
+<h1><%= @group.name %></h1>
 
-<% @group.deals.each do |deal| %>
-  <div class="deal">
-    <h2><%= deal.name %></h2>
-    <p>Description: <%= deal.description %></p>
-    <p>Amount: <%= deal.amount %></p>
-  </div>
-<% end %>
+<p>Total Amount: <%= @total_amount %></p>
 
-<%= link_to 'Back to Group Page', groups_path %>
+<h2>Deals</h2>
+<ul>
+  <% @deals.each do |deal| %>
+    <li>
+      Amount: <%= deal.amount %>, Date: <%= deal.created_at %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a New Deal", new_group_deal_path(@group) %>
+<%= link_to "Back", root_path %>

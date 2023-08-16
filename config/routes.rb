@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   end
 
   resources :groups do
-    resources :deals
+    resources :deals, only: [:index, :new, :create]
   end
 end
