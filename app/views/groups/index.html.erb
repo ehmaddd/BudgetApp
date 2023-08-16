@@ -4,7 +4,15 @@
   <div class="group">
     <h2><%= group.name %></h2>
     <p>Icon: <%= group.icon %></p>
-    <p>Total Amount of Deals: <%= group.deals.sum(:amount) %></p>
+    <p>Total Amount of Deals: <%= number_to_currency(group.deals.where(author: current_user).sum(:amount)) %></p>
+    <h3>Deals:</h3>
+    <ul>
+      <% group.deals.where(author: current_user).each do |deal| %>
+        <li>
+          <%= deal.name %> - <%= number_to_currency(deal.amount) %> - <%= deal.created_at.strftime('%Y-%m-%d') %>
+        </li>
+      <% end %>
+    </ul>
     <%= link_to 'View Deals', group_deals_path(group) %>
   </div>
 <% end %>

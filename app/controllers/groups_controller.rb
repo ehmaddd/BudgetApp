@@ -1,8 +1,16 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @groups = Group.all
-    authorize! :read, Group
+    # @groups = current_user.groups
+    # @groups.each do |group|
+    # group.total_amount = group.deals.sum(:amount)
+    @groups = current_user.groups
+    @groups.each do |group|
+      group_deals = group.deals
+      total_amount = group_deals.sum(:amount)
+      puts "Group: #{group.name}, Deals: #{group_deals.count}, Total Amount: #{total_amount}"
+      group.total_amount = total_amount
+    end
   end
 
   def new
@@ -10,13 +18,20 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = current_user.groups.build(group_params)
+    @group = Group.new(group_params)
+    @group.user = current_user
 
     if @group.save
       redirect_to groups_path, notice: 'Group was successfully created.'
     else
       render :new
     end
+  end
+
+  def show
+    @group = Group.find(params[:id])
+    @deals = @group.deals.order(created_at: :desc)
+    @total_amount = @deals.sum(:amount)
   end
 
   private
