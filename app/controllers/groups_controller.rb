@@ -1,6 +1,8 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @groups = Group.all
+    authorize! :read, Group
   end
 
   def new
@@ -8,7 +10,8 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = current_user.groups.build(group_params)
+
     if @group.save
       redirect_to groups_path, notice: 'Group was successfully created.'
     else
