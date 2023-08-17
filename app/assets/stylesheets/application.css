@@ -137,3 +137,51 @@ input {
   color: #434b53;
   font-weight: bold;
 }
+
+.new-transaction-link {
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: #434b53;
+  font-weight: bold;
+}
+
+.total-amount {
+  width: 97%;
+  background-color: white;
+  border: 1px solid azure;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.group-name {
+  margin-left: 2rem;
+}
+
+.deal-container {
+  width: 100%;
+}
+
+.deal-flex {
+  display: flex;
+  flex-direction: row;
+  width: 91%;
+  background-color: white;
+  border: 1px solid black;
+  margin-bottom: 0.5rem;
+}
+
+.deal-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 70%;
+}
+
+.deal-details p {
+  margin: 0.5rem 1rem;
+}
+
+.deal-name {
+  color: #434b53;
+  font-weight: 600;
+}
