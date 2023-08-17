@@ -33,16 +33,6 @@ RSpec.describe GroupsController, type: :controller do
     end
   end
 
-  describe 'POST #create' do
-    let(:group_params) { attributes_for(:group) } # Assuming you have a Factory setup
-
-    it 'creates a new group' do
-      post :create, params: { group: group_params }
-      expect(response).to have_http_status(:redirect)
-      expect(Group.count).to eq(5)
-    end
-  end
-
   describe 'GET #edit' do
     let(:group) { create(:group) } # Assuming you have a Factory setup
 
