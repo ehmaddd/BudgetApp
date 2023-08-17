@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
 }
 
 .splash {
@@ -11,6 +13,9 @@ body {
   justify-content: center;
   height: 100vh;
   background-color: #f0f0f0;
+  width: 70vh;
+  border: 1px solid grey;
+  margin: auto;
 }
 
 h1 {
@@ -26,20 +31,36 @@ p {
 
 .buttons {
   display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.button {
-  display: inline-block;
-  padding: 10px 20px;
+.button1,
+.button2 {
+  padding: 20px 20px;
   margin: 0 10px;
   font-size: 1rem;
   text-align: center;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
   border-radius: 5px;
+  width: 87%; /* This makes the buttons expand to full width */
 }
 
+.button1 {
+  background-color: #3778c2;
+  color: white;
+  text-decoration: none;
+}
+
+.button2 {
+  color: black;
+  text-decoration: none;
+}
 .button:hover {
   background-color: #0056b3;
+}
+
+.logo-img {
+  width: 20%;
+  margin-bottom: 25%;
+  margin-top: 20%;
 }
