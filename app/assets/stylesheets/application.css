@@ -13,3 +13,175 @@
  *= require_tree .
  *= require_self
  */
+
+.top-strip {
+  background-color: #3778c2;
+  color: white;
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.top-strip2 h2 {
+  font-weight: 300;
+}
+
+.top-strip2 {
+  background-color: #3778c2;
+  color: white;
+  width: 97%;
+  display: flex;
+  padding: 2%;
+}
+
+.top-strip h2 {
+  font-weight: 300;
+}
+
+.splash2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  width: 70vh;
+  border: 1px solid grey;
+  margin: auto;
+}
+
+.back-link {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-right: 7rem;
+}
+
+.forward-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin-top: 1.4rem;
+  font-weight: 200;
+}
+
+input {
+  height: 3.5rem;
+  border: #f0f0f0;
+  width: 99%;
+  margin-bottom: 0.3rem;
+  font-size: 18px;
+  color: black;
+}
+
+.registration-form {
+  width: 100%;
+}
+
+#submit-button {
+  color: #fff;
+  background-color: #5fb523;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.forgot-password-link {
+  text-decoration: none;
+  color: grey;
+  margin-top: 2rem;
+}
+
+.signout-link {
+  text-decoration: none;
+  margin-top: 1.4rem;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin-right: 4rem;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.group-container {
+  display: flex;
+  background-color: white;
+  width: 92%;
+  height: 4rem;
+  padding: 0.5rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  border-color: azure;
+  margin-top: 1rem;
+}
+
+.group-element {
+  flex: 1;
+  width: 30%;
+}
+
+.group-image {
+  width: 4rem;
+}
+
+.group-link {
+  text-decoration: none;
+  color: #434b53;
+  text-align: left;
+}
+
+.new-category-link {
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #434b53;
+  font-weight: bold;
+}
+
+.new-transaction-link {
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: #434b53;
+  font-weight: bold;
+}
+
+.total-amount {
+  width: 97%;
+  background-color: white;
+  border: 1px solid azure;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.group-name {
+  margin-left: 2rem;
+}
+
+.deal-container {
+  width: 100%;
+}
+
+.deal-flex {
+  display: flex;
+  flex-direction: row;
+  width: 91%;
+  background-color: white;
+  border: 1px solid black;
+  margin-bottom: 0.5rem;
+}
+
+.deal-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 70%;
+}
+
+.deal-details p {
+  margin: 0.5rem 1rem;
+}
+
+.deal-name {
+  color: #434b53;
+  font-weight: 600;
+}

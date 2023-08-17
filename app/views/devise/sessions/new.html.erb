@@ -1,26 +1,20 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="splash2">
+  <div class="top-strip">
+    <%= link_to 'Home', unauthenticated_root_path, class:"forward-link" %>
+    <h2>LOGIN</h2>
+    <%= link_to 'Sign up', new_user_registration_path, class:"forward-link" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.email_field :email, placeholder: 'Email', autofocus: true, autocomplete: "email" %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.password_field :password, placeholder: 'Password', autocomplete: "current-password" %>
+
+    <div class="actions">
+      <%= f.submit "Log in", id:'submit-button' %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+<%= link_to "Forgot Password?", new_password_path(resource_name), class: "forgot-password-link" %>
 
-<%= render "devise/shared/links" %>
+</div>

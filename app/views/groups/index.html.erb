@@ -1,21 +1,17 @@
-<h1>Group Page</h1>
-
+<div class="splash2">
+  <div class="top-strip2">
+    <%= button_to 'Sign Out', destroy_user_session_path, class:"signout-link", method: :delete %>
+    <h2>CATEGORIES</h2>
+  </div>
 <% @groups.each do |group| %>
-  <div class="group">
-    <h2><%= group.name %></h2>
-    <p>Icon: <%= group.icon %></p>
-    <p>Total Amount of Deals: <%= number_to_currency(group.deals.where(author: current_user).sum(:amount)) %></p>
-    <h3>Deals:</h3>
-    <ul>
-      <% group.deals.where(author: current_user).each do |deal| %>
-        <li>
-          <%= deal.name %> - <%= number_to_currency(deal.amount) %> - <%= deal.created_at.strftime('%Y-%m-%d') %>
-        </li>
-      <% end %>
-    </ul>
-    <%= link_to 'View Deals', group_deals_path(group) %>
+  <div class="group-container">
+    <div class="group-element">
+      <img src="<%= group.icon %>" class="no-underline group-image">
+    </div>
+    <%= link_to group_deals_path(group), class:"group-link group-element" do %>
+      <p><%= group.name %></p>
+    <% end %>
+    <p class="group-element"><%= number_to_currency(group.deals.where(author: current_user).sum(:amount)) %></p>
   </div>
 <% end %>
-
-<%= link_to 'Add a New Group', new_group_path %>
-<%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<%= link_to 'Add a New Category', new_group_path, class:'new-category-link'%>
