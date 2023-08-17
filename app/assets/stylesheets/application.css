@@ -83,6 +83,7 @@ input {
   color: #fff;
   background-color: #5fb523;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .forgot-password-link {
