@@ -7,8 +7,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true, unless: :changing_password?
 
-  private
-
   def changing_password?
     encrypted_password_changed?
   end
