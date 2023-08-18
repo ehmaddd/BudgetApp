@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Deals', type: :request do
   let(:user) { create(:user) }
-  let(:group) { create(:group, user: user) }
+  let(:group) { create(:group, user:) }
   let(:valid_attributes) { attributes_for(:deal) }
 
   describe 'GET /groups/:group_id/deals' do
@@ -27,9 +27,9 @@ RSpec.describe 'Deals', type: :request do
     context 'when user is logged in' do
       it 'creates a new deal' do
         sign_in user
-        expect {
+        expect do
           post group_deals_path(group), params: { deal: valid_attributes }
-        }.to change(Deal, :count).by(1)
+        end.to change(Deal, :count).by(1)
       end
     end
   end

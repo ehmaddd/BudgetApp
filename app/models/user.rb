@@ -11,7 +11,7 @@ class User < ApplicationRecord
     encrypted_password_changed?
   end
 
-  attr_accessor :name  # Add this line to include the virtual attribute
+  attr_accessor :name # Add this line to include the virtual attribute
 
   # Include the necessary methods for Devise to recognize the attribute
   def self.attributes_protected_by_default
@@ -20,8 +20,8 @@ class User < ApplicationRecord
 
   # Override Devise's default parameter sanitizer to include :name
   def self.devise_parameter_sanitizer
-    if respond_to?(:default_params)
-      default_params.permit(:name, :email, :password, :password_confirmation)
-    end
+    return unless respond_to?(:default_params)
+
+    default_params.permit(:name, :email, :password, :password_confirmation)
   end
 end

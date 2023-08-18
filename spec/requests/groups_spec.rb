@@ -12,7 +12,7 @@ RSpec.describe 'Groups', type: :request do
 
   describe 'GET /groups' do
     it 'displays a list of groups' do
-      group = create(:group, user: user)
+      group = create(:group, user:)
       get groups_path
       expect(response).to have_http_status(:ok)
       expect(response.body).to include(group.name)
@@ -21,7 +21,7 @@ RSpec.describe 'Groups', type: :request do
 
   describe 'GET /groups/:id' do
     it 'displays a group' do
-      group = create(:group, user: user)
+      group = create(:group, user:)
       get group_path(group)
       expect(response).to have_http_status(:ok)
       expect(response.body).to include(group.name)

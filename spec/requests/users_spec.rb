@@ -32,9 +32,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'updating user attributes' do
-
     context 'updating user attributes' do
-
       it 'fails to update user name when not logged in' do
         put user_registration_path, params: { user: { name: new_name } }
 
