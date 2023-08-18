@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :user do
     factory :author_user do
       after(:create) do |user|
-        create(:group, user: user)
+        create(:group, user:)
       end
     end
 

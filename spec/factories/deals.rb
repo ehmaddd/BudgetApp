@@ -6,7 +6,7 @@ FactoryBot.define do
 
     after(:create) do |deal|
       group = create(:group)
-      create(:deal_group, deal: deal, group: group)
+      create(:deal_group, deal:, group:)
     end
   end
 end

@@ -57,9 +57,9 @@ RSpec.describe GroupsController, type: :controller do
     let!(:group) { create(:group) } # Assuming you have a Factory setup
 
     it 'destroys the group' do
-      expect {
+      expect do
         delete :destroy, params: { id: group.id }
-      }.to change(Group, :count).by(-1)
+      end.to change(Group, :count).by(-1)
       expect(response).to have_http_status(:redirect)
     end
   end
