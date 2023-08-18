@@ -13,4 +13,8 @@
 </ul>
 
 <%= link_to "Add a New Deal", new_group_deal_path(@group) %>
-<%= link_to "Back", root_path %>
+<% if user_signed_in? %>
+  <%= link_to "Back", authenticated_root_path %>
+<% else %>
+  <%= link_to "Back", unauthenticated_root_path %>
+<% end %>
