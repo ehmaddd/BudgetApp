@@ -136,6 +136,15 @@ input {
   text-decoration: none;
   color: #434b53;
   font-weight: bold;
+  color: #fff;
+  background-color: #5fb523;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 33%;
+  padding-top: 1.2rem;
+  position: fixed;
+  bottom: 0;
 }
 
 .new-transaction-link {
@@ -143,6 +152,15 @@ input {
   text-decoration: none;
   color: #434b53;
   font-weight: bold;
+  color: #fff;
+  background-color: #5fb523;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 33%;
+  padding-top: 1.2rem;
+  position: fixed;
+  bottom: 0;
 }
 
 .total-amount {
