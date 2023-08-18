@@ -34,6 +34,27 @@ class GroupsController < ApplicationController
     @total_amount = @deals.sum(:amount)
   end
 
+  def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
+
+    if @group.update(group_params)
+      redirect_to @group, notice: 'Group was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+
+    redirect_to groups_path, notice: 'Group was successfully destroyed.'
+  end
+
   private
 
   def group_params
