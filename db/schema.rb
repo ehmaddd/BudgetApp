@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_15_144442) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_18_132843) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,14 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_144442) do
     t.index ["author_id"], name: "index_deals_on_author_id"
   end
 
-  create_table "deals_groups", id: false, force: :cascade do |t|
-    t.bigint "deal_id"
-    t.bigint "group_id"
-    t.index ["deal_id", "group_id"], name: "index_deals_groups_on_deal_id_and_group_id", unique: true
-    t.index ["deal_id"], name: "index_deals_groups_on_deal_id"
-    t.index ["group_id"], name: "index_deals_groups_on_group_id"
-  end
-
   create_table "groups", force: :cascade do |t|
     t.string "name", null: false
     t.string "icon"
@@ -49,17 +41,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_144442) do
     t.string "name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.datetime "created_at", default: "2023-08-15 12:46:56", null: false
-    t.datetime "updated_at", default: "2023-08-15 12:46:56", null: false
-    t.datetime "remember_created_at", precision: nil
-    t.string "reset_password_token"
+    t.datetime "created_at", default: "2023-08-18 13:19:49", null: false
+    t.datetime "updated_at", default: "2023-08-18 13:19:49", null: false
     t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
   end
 
   add_foreign_key "deal_groups", "deals"
   add_foreign_key "deal_groups", "groups"
   add_foreign_key "deals", "users", column: "author_id"
-  add_foreign_key "deals_groups", "deals"
-  add_foreign_key "deals_groups", "groups"
   add_foreign_key "groups", "users"
 end

@@ -20,9 +20,8 @@ class SessionsController < Devise::SessionsController
   end
 
   def destroy
-    super do |_resource|
-      redirect_to unauthenticated_root_url and return
-    end
+    sign_out current_user
+    redirect_to unauthenticated_root_url
   end
 
   private
