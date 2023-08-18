@@ -1,0 +1,23 @@
+<div class="splash2">
+  <div class="top-strip">
+    <%= link_to 'Home', unauthenticated_root_path, class:"forward-link" %>
+    <h2>REGISTER</h2>
+    <%= link_to 'Log in', new_user_session_path, class:"forward-link" %>
+  </div>
+
+  <%= form_for(resource, class:'register-form', as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <%= f.text_field :name, placeholder: 'Full Name', autofocus: true %>
+
+      <%= f.email_field :email, placeholder: 'Email', autofocus: true, autocomplete: "email" %>
+
+      <%= f.password_field :password, placeholder: 'Password', autocomplete: "new-password" %>
+
+      <%= f.password_field :password_confirmation, placeholder: 'Password Confirm', autocomplete: "new-password" %>
+
+    <div class="actions">
+      <%= f.submit "Sign up", id:'submit-button' %>
+    </div>
+  <% end %>
+</div>

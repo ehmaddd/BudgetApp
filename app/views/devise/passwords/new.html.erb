@@ -1,0 +1,15 @@
+<div class="splash2">
+  <div class="top-strip">
+    <%= link_to 'Home', unauthenticated_root_path, class:"forward-link" %>
+    <h2>FORGOT PASSWORD</h2>
+    <%= link_to 'Log in', new_user_session_path, class:"forward-link" %>
+  </div>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+    <%= f.email_field :email, placeholder: 'Email', autofocus: true, autocomplete: "email" %>
+
+    <%= f.submit "Send password reset instructions", id: 'submit-button' %>
+<% end %>
+</div>

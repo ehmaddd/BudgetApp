@@ -1,0 +1,29 @@
+<div class="splash2">
+  <div class="top-strip2">
+    <%= link_to '<', groups_path, class: 'back-link' %>
+    <h2>TRANSACTIONS</h2>
+  </div>
+
+<div class='total-amount'>
+  <p>Total Amount: <%= number_to_currency(@total_amount) %></p>
+</div>
+
+<div class="group-container">
+  <img src="<%= @group.icon %>" class="no-underline group-image">
+  <h2 class="group-name"><%= @group.name %></h2>
+</div>
+
+<ul class="deal-container">
+  <% @deals.each do |deal| %>
+    <li class="deal-flex">
+      <div class="deal-details">
+        <p class="deal-name"><%= deal.name %></p>
+        <p><%= deal.created_at.strftime('%d %b %Y at %H:%M:%S') %></p>
+      </div>
+      <p><%= number_to_currency(deal.amount) %></p>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a New Transaction', new_group_deal_path(@group), class: 'new-transaction-link' %>
+</div>

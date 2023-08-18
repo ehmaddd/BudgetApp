@@ -1,0 +1,14 @@
+<div class="splash2">
+  <div class="top-strip2">
+    <%= link_to '<', group_deals_path(@group), class:"back-link" %>
+    <h2>Add New Transaction</h2>
+  </div>
+
+<%= form_with model: [@group, @deal], url: group_deals_path(@group) do |form| %>
+
+    <%= form.text_field :name, placeholder: 'Transaction Name' %>
+
+    <%= form.number_field :amount, placeholder: 'Amount ($)' %>
+
+  <%= form.submit 'Create Transaction', id: 'submit-button' %>
+<% end %>
