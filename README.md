@@ -121,7 +121,7 @@ A simple page with the name of your app (yes, you need to choose one), and links
 
 ### Video Demo Link <a name="live-demo-link"></a>
 
-Comming soon
+https://budgetapp-6l76.onrender.com/
 
 <!-- GETTING STARTED -->
 
